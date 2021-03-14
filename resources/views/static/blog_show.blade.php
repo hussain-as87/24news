@@ -12,7 +12,7 @@
                         <div class="row pb-4">
                             <div class="col-md-5">
                                 <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img"><img src="{{asset('storage/'.$class->image)}}"
+                                    <div class="fh5co_news_img"><img src="{{asset('storage/photos/web/'.$class->image)}}"
                                                                      alt=""/></div>
                                     <div></div>
                                 </div>
@@ -81,7 +81,7 @@
                 @foreach($news0 as $n)
                     <div class="item px-2">
                         <div class="fh5co_hover_news_img">
-                            <div class="fh5co_news_img"><img src="{{asset('storage/'.$n->image)}}" alt=""/></div>
+                            <div class="fh5co_news_img"><img src="{{asset('storage/photos/web/'.$n->image)}}" alt=""/></div>
                             <div>
                                 <a href="#" class="d-block fh5co_small_post_heading"><span
                                         class="">{{$n->title}}.</span></a>

@@ -28,7 +28,7 @@
                         @if($news->image)
                             <div class="row">
                                 <div class="col-12">
-                                    <img src="{{ asset('storage/' . $news->image) }}" alt="" class="img-thumbnail">
+                                    <img src="{{ asset('storage/photos/web/' . $news->image) }}" alt="" class="img-thumbnail">
                                 </div>
                             </div>
                         @endif

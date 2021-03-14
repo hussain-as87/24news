@@ -5,7 +5,7 @@
         <div class="row mx-0">
             @foreach($news11 as $n)
                 <div class="col-md-6 col-12 paddding animate-box" data-animate-effect="fadeIn">
-                    <div class="fh5co_suceefh5co_height"><img src="{{asset('storage/'.$n->image)}}" alt="img"/>
+                    <div class="fh5co_suceefh5co_height"><img src="{{asset('storage/photos/web/'.$n->image)}}" alt="img"/>
                         <div class="fh5co_suceefh5co_height_position_absolute"></div>
                         <div class="fh5co_suceefh5co_height_position_absolute_font">
                             <div class=""><a href="{{$n->publicPath()}}" class="color_fff"> <i
@@ -22,7 +22,7 @@
                 <div class="row">
                     @foreach($news00 as $n)
                         <div class="col-md-6 col-6 paddding animate-box" data-animate-effect="fadeIn">
-                            <div class="fh5co_suceefh5co_height_2"><img src="{{asset('storage/'.$n->image)}}"
+                            <div class="fh5co_suceefh5co_height_2"><img src="{{asset('storage/photos/web/'.$n->image)}}"
                                                                         alt="img"/>
                                 <div class="fh5co_suceefh5co_height_position_absolute"></div>
                                 <div class="fh5co_suceefh5co_height_position_absolute_font_2">
@@ -53,7 +53,7 @@
                 @foreach($news0 as $n)
                     <div class="item px-2">
                         <div class="fh5co_latest_trading_img_position_relative">
-                            <div class="fh5co_latest_trading_img"><img src="{{asset('storage/'.$n->image)}}"
+                            <div class="fh5co_latest_trading_img"><img src="{{asset('storage/photos/web/'.$n->image)}}"
                                                                        alt=""
                                                                        class="fh5co_img_special_relative"/>
                             </div>
@@ -81,7 +81,7 @@
                 @foreach ($news as $n)
                     <div class="item px-2">
                         <div class="fh5co_hover_news_img">
-                            <div class="fh5co_news_img"><img src="{{asset('storage/'.$n->image)}}" alt=""/></div>
+                            <div class="fh5co_news_img"><img src="{{asset('storage/photos/web/'.$n->image)}}" alt=""/></div>
                             <div>
                                 <a href="{{$n->publicPath()}}"
                                    class="d-block fh5co_small_post_heading"><span
@@ -108,7 +108,7 @@
                         <div class="row pb-4">
                             <div class="col-md-5">
                                 <div class="fh5co_hover_news_img">
-                                    <div class="fh5co_news_img"><img src="{{asset('storage/'.$n->image)}}"
+                                    <div class="fh5co_news_img"><img src="{{asset('storage/photos/web/'.$n->image)}}"
                                                                      alt=""/></div>
                                     <div></div>
                                 </div>
@@ -145,7 +145,7 @@
 
                         <div class="row pb-3">
                             <div class="col-5 align-self-center">
-                                <a href="{{$n->publicPath()}}"><img src="{{asset('storage/'.$n->image)}}"
+                                <a href="{{$n->publicPath()}}"><img src="{{asset('storage/photos/web/'.$n->image)}}"
                                                                     alt="img"
                                                                     class="fh5co_most_trading"/></a>
 

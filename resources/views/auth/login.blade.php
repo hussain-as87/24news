@@ -13,7 +13,7 @@
                                 <label class="small mb-1" for="inputEmailAddress">{{__('E-Mail Address')}}</label>
                                 <input class="form-control py-4 @error('email') is-invalid @enderror"
                                        id="inputEmailAddress"
-                                       type="email" placeholder="{{__('enter your name')}}" name="email"
+                                       type="email" placeholder="{{__('enter your email')}}" name="email"
                                        value="{{ old('email') }}" required autocomplete="email" autofocus/>
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
