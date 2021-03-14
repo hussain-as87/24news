@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ApiClassificationController;
-use App\Http\Controllers\ApiNewsController;
+use App\Http\Controllers\api\ClassificationController;
+use App\Http\Controllers\api\NewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,36 +21,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //news routes
-
-//index
-Route::get('news/home', [ApiNewsController::class, 'index'])->name('news.home');
-
-//show
-Route::get('news/{id}', [ApiNewsController::class, 'show'])->name('news.show');
-
-//create
-Route::post('news', [ApiNewsController::class, 'store'])->name('news.store');
-
-//edit
-Route::put('news', [ApiNewsController::class, 'store'])->name('news.update');
-
-//delete
-Route::delete('news/{id}', [ApiNewsController::class, 'destroy'])->name('news.destroy');
+Route::apiResource('/news', NewsController::class)->names([
+    'index' => 'api.news.index',
+    'show' => 'api.news.show',
+    'store' => 'api.news.store',
+    'update' => 'api.news.update',
+    'destroy' => 'api.news.destroy',
+])->except('create', 'edit');
 
 
-//classification routes
+Route::apiResource('/classifications', ClassificationController::class)->names([
+    'index' => 'api.classifications.index',
+    'show' => 'api.classifications.show',
+    'store' => 'api.classifications.store',
+    'update' => 'api.classifications.update',
+    'destroy' => 'api.classifications.destroy',
+])->except('create', 'edit');
 
-//index
-Route::get('class/home', [ApiClassificationController::class, 'index'])->name('class.home');
+Route::post('/login', [\App\Http\Controllers\api\LoginController::class, 'login'])->name('api.login');
 
-//show
-Route::get('class/{id}', [ApiClassificationController::class, 'show'])->name('class.show');
-
-//create
-Route::post('class', [ApiClassificationController::class, 'store'])->name('class.store');
-
-//edit
-Route::put('class', [ApiClassificationController::class, 'store'])->name('class.update');
-
-//delete
-Route::delete('class/{id}', [ApiClassificationController::class, 'destroy'])->name('class.destroy');

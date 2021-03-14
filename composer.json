@@ -17,8 +17,10 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "jenssegers/date": "^4.0",
         "laravel/framework": "^8.12",
+        "laravel/sanctum": "^2.9",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.1",
+        "livewire/livewire": "^2.4",
         "nesbot/carbon": "^2.43",
         "nicolaslopezj/searchable": "^1.13",
         "spatie/laravel-translatable": "^4.6"

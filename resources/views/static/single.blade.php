@@ -16,7 +16,7 @@
                     <hr/>
                     <br/>
 
-                        {!! $news->details !!}
+                    {!! $news->details !!}
 
                     <br/>
                     <div style="width:700px">{!! $news->video_html !!}</div>

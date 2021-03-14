@@ -65,10 +65,15 @@
     </div>
     <div class="mb-3">
         <label for="image" class="form-label">{{__('IMAGE')}}</label>
+        @if ($news->image)
+            <img alt="" src="{{asset('/storage/'.$news->image)}}" width="200px"/>
+        @endif
         <input class="form-control" type="file" multiple name="image">
         @error('image')
         <small class="text-danger">{{ $message }}</small>
         @enderror
+
+
     </div>
 
     <div class="form-group">

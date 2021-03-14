@@ -45,6 +45,8 @@
             transition: all .5s ease;
         }
     </style>
+    @livewireStyles
+
 </head>
 <body>
 <div class="container-fluid fh5co_header_bg">
@@ -303,6 +305,8 @@
     <script src="js/jquery.waypoints.min.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
+    @livewireScripts
+
 </div>
 </body>
 </html>

@@ -96,56 +96,6 @@
             </div>
         </div>
     </div>
-    @if ($newses->video)
-        <div class="container-fluid fh5co_video_news_bg pb-4">
-            <div class="container animate-box" data-animate-effect="fadeIn">
-                <div>
-                    <div class="fh5co_heading fh5co_heading_border_bottom pt-5 pb-2 mb-4  text-white">Video
-                        {{__('news')}}
-                    </div>
-                </div>
-                <div>
-                    <div class="owl-carousel owl-theme" id="slider3">
-                        @foreach ($news as $n)
-                            @if ($n->video)
-                                <div class="item px-2">
-                                    <div class="fh5co_hover_news_img">
-                                        <div class="fh5co_hover_news_img_video_tag_position_relative">
-                                            <div class="fh5co_news_img">
-                                                <div style="width: 100%;height: 200px"> {!! $n->video_html !!}</div>
-
-                                            </div>
-                                            <div class="fh5co_hover_news_img_video_tag_position_absolute fh5co_hide_2">
-                                                <img src="{{asset('storage/'.$n->image)}}" alt=""/></div>
-                                            <div class="fh5co_hover_news_img_video_tag_position_absolute_1 fh5co_hide_2"
-                                                 id="play-video_2">
-                                                <div
-                                                    class="fh5co_hover_news_img_video_tag_position_absolute_1_play_button_1">
-                                                    <div
-                                                        class="fh5co_hover_news_img_video_tag_position_absolute_1_play_button">
-                                                        <span><i class="fa fa-play"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <a href="{{$n->publicPath()}}"
-                                               class="d-block fh5co_small_post_heading ">
-                                                <span class="">{{$n->title}}</span></a>
-                                            <div class="c_g"><i
-                                                    class="fa fa-clock-o"></i> {{$n->created_at->format('D-M-Y')}}
-                                                <br/>
-                                                {{$n->created_at->format('h:i:s')}}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endif
 
     <div class="container-fluid pb-4 pt-4 paddding">
         <div class="container paddding">

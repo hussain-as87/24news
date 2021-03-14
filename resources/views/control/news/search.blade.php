@@ -107,16 +107,16 @@
                                     <th scope="row">
                                         <div class="row-cols-md-5">
                                             <a class="link-dark alert-link btn-outline-dark"
-                                               href="{{ route('news.details', ['detail' => $n]) }}">{{ $n->id }}</a>
+                                               href="{{$n->privatepath()}}">{{ $n->id }}</a>
                                         </div>
                                     </th>
                                     <td>
-                                        <a href="{{ route('news.details', ['detail' => $n]) }}"
+                                        <a href="{{$n->privatepath()}}"
                                            class="link-dark alert-link btn-outline-dark"> {{ $n->title }}</a>
                                     </td>
                                     <td>
                                         <div class=" row-cols-md-5"><a
-                                                href="{{ route('news.details', ['detail' => $n]) }}"
+                                                href="{{$n->privatepath()}}"
                                                 class="link-dark alert-link btn-outline-dark">  {{ $n->user->name }}</a>
                                         </div>
                                     </td>

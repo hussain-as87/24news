@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    protected $path_image = 'public/photos/web';
+
     /**
      * Display a listing of the resource.
      *
@@ -108,7 +110,10 @@ class NewsController extends Controller
         $news->load('classification.news');
         $data = $this->getValidationFactory();
         $news = auth()->user()->News()->create($data);
-        $this->storeImage($news);
+        if ($request->hasFile('image')) {
+            $news->image = self::upload_image($request->image, $this->path_image);
+            $news->save();
+        }
         // dd($data);
         return redirect(route('news.create'))->with('message', '');
     }
@@ -157,7 +162,10 @@ class NewsController extends Controller
 
         $news->update($data);
 
-        $this->storeImage($news);
+        if ($request->hasFile('image')) {
+            $news->image = self::upload_image($request->image, $this->path_image);
+            $news->save();
+        }
         return redirect(route('news.show'));
     }
 
@@ -186,24 +194,12 @@ class NewsController extends Controller
         ]);
     }
 
-    private function storeImage(News $news)
+    public static function upload_image($photo, $path)
     {
-        $image = '';
-        $image = basename($_FILES["image"]["name"]);
-
-        if (\request()->hasFile('image')) {
-            $news->update([
-                'image' => \request()->image->store('store/images', 'public'),
-            ]);
-
-            // $news->saveImage(\request()->image, 'store/images');
-
-            /*$image=Image::make(public_path('storage/'.$customer->image))->fit(300,300);
-        $image->save();*/
-
-        }
-
-
+        $extension = $photo->getClientOriginalExtension();
+        $image_name = time() . '.' . $extension;
+        $photo->storeAs($path, $image_name);
+        return $image_name;
     }
 }
 

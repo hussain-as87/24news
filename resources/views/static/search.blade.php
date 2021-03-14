@@ -23,7 +23,7 @@
                                        class="fh5co_mini_time py-3">
                                         {{$news->user->name}} -
                                         {{$news->created_at}}</a>
-                                    <div class="fh5co_consectetur"> {{$news->summary}}.
+                                    <div class="fh5co_consectetur"> {!!$news->summary!!}.
                                     </div>
                                 </div>
                             </divclass>
