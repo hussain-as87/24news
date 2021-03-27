@@ -32,9 +32,9 @@
                 </div>
             </div>
             <div class="row mx-0">
-                <div class="col-12 text-center pb-4 pt-4">
+               {{-- <div class="col-12 text-center pb-4 pt-4">
                     {{$news->links()}}
-                </div>
+                </div>--}}
             </div>
         </div>
     </div>
