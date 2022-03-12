@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label for="name">{{__('NAME')}}({{$key}})</label>
                 <input type="text" class="form-control"
-                       aria-describedby="nameHelp" name="name[{{$key}}]"
+                      id="name" aria-describedby="nameHelp" name="name[{{$key}}]"
                        value="{{old('name.'.$key)??$classification->name}}">
                 @error('name.'.$key)
                 <small class="text-danger">{{$message}}</small>

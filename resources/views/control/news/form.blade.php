@@ -56,11 +56,8 @@
     <div class="form-group">
         <label for="case">{{__('CASE')}}</label>
         <select name="case" class="form-control">
-
-            @foreach($news->caseOptions() as $caseOptionKey => $caseOptionValue)
-                <option
-                    value="{{ $caseOptionKey }}" {{ $news->case == $caseOptionValue ? 'selected' : '' }}>{{ __($caseOptionValue) }}</option>
-            @endforeach
+                <option value="Trending" {{ $news->case == 'Trending' ? 'selected' : '' }}>{{ __('Trending') }}</option>
+                <option value="Popular" {{ $news->case == 'Popular' ? 'selected' : '' }}>{{ __('Popular') }}</option>
         </select>
     </div>
     <div class="mb-3">
