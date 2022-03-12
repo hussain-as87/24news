@@ -61,14 +61,6 @@ class News extends Model
         return $this->caseOptions()[$attribute];
     }
 
-    public function caseOptions()
-    {
-        return [
-            '0' => 'Trending',
-            '1' => 'Popular',
-        ];
-    }
-
     protected function asJson($value)
     {
         return json_encode($value, JSON_UNESCAPED_UNICODE);

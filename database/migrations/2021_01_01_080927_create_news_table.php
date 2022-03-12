@@ -24,7 +24,7 @@ class CreateNewsTable extends Migration
             $table->json('details');
             $table->string('image')->nullable();
             $table->string('video')->nullable();
-            $table->string('case');
+            $table->enum('case',['Trending','Popular'])->default('Trending');
             $table->timestamps();
         });
     }
